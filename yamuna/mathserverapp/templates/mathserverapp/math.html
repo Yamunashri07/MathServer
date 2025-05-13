@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POWER OF LAMP</title>
+    <style>
+        body {
+            background-color: rgb(229, 167, 224);
+            text-align: center;
+            margin-top: 100px;
+        }
+        .container {
+            display: inline-block;
+            padding: 30px;
+            background-color: rgb(168, 211, 239);
+            border: 3px dashed black;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3>YAMUNA SHRI VARDHINI (212224040368)</h3>
+    <h1><b>POWER OF LAMP</b></h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Intensity (I):</label>
+        <input type="text" name="intensity" placeholder="Enter Intensity"> (in Amperes) <br><br>
+
+        <label>Resistance (R):</label>
+        <input type="text" name="resistance" placeholder="Enter Resistance"> (in Ohms) <br><br>
+
+        <button type="submit">Calculate</button> <br><br>
+
+        <label>Power (P):</label>
+        <input type="text" readonly value="{{ powerlamp }}"> (in Watts)
+    </form>
+
+</div>
+
+</body>
+</html>
